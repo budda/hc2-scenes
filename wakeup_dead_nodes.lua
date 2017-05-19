@@ -22,7 +22,7 @@ while true do
     
     if status >= "1" then 
       fibaro:debug(day.."/"..month..":"..i..' DEAD '..name..":"..room); 
-      fibaro:wakeUpDeadDevice(i) 
+      fibaro:call(i, "wakeUpDeadDevice") 
       fibaro:sleep(5000) --check again in 5 sec 
       status = fibaro:getValue(i, 'dead'); 
       if status >= "1" then
